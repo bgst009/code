@@ -1,7 +1,7 @@
 1. 在控制台输出你好某某，例如：“Hello David！”
 
 
-```
+```java
 public class hello{
     public static void main(String[] args){
         System.out.println("Hello David!");
@@ -15,7 +15,7 @@ public class hello{
 > 提示：使用Scanner对象接受控制台数据
 
 
-```
+```java
 import java.util.Scanner;
 
 public class hello{
