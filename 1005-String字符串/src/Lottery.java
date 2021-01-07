@@ -5,7 +5,13 @@ import java.util.*;
  */
 public class Lottery {
 	static Lottery lottery = new Lottery();
-	String password, username, vipId;
+
+	String[][] usrInfoDate = new String[10][3];
+
+	String password;
+	String username;
+	String vipId;
+	int baseId = 0;
 	boolean loginFlag = false;
 	int chance = 3;
 
@@ -56,13 +62,18 @@ public class Lottery {
 		System.out.print("输入密码：");
 		password = new Scanner(System.in).next();
 		System.out.println("注册成功，请记好你的会员卡号");
-		vipId = "1";
+		vipId = (baseId) + "";
+		usrInfoDate[baseId][0] = username;
+		usrInfoDate[baseId][1] = password;
+		usrInfoDate[baseId][2] = vipId;
 		System.out.println("用户名  密码  会员卡号");
-		System.out.println(username + " " + password + " " + vipId);
+		System.out.println(usrInfoDate[baseId][0] + "    " + usrInfoDate[baseId][1] + "     " + usrInfoDate[baseId][2]);
+		baseId++;
 	}
 
 	public void login() {
 
+		boolean logged = false;
 
 		String tempUser, tempPassword;
 		System.out.print("请输入用户名：");
@@ -70,7 +81,16 @@ public class Lottery {
 		System.out.print("请输入密码：");
 		tempPassword = new Scanner(System.in).next();
 
-		if (tempUser.equals(username) && tempPassword.equals(password)) {
+
+		for (String[] strings : usrInfoDate) {
+			if (strings[0] != null) {
+				if (strings[0].equals(tempUser) && strings[1].equals(tempPassword)) {
+					logged = true;
+				}
+			}
+		}
+
+		if (logged) {
 			System.out.println("登录成功");
 			loginFlag = true;
 		} else {
@@ -83,10 +103,9 @@ public class Lottery {
 	}
 
 	public void beginLottery() {
-		int[] randomArray = new int[5];
 		boolean win = false;
 		if (loginFlag) {
-			System.out.println("会员码为："+vipId);
+			System.out.println("会员码为：" + vipId);
 
 			System.out.print("本日幸运数字为：");
 
@@ -95,22 +114,22 @@ public class Lottery {
 			int range = 10;
 
 			while (numsSet.size() < num) {
-				int tmp = new Random().nextInt(range)+1;
+				int tmp = new Random().nextInt(range);
 				numsSet.add(tmp);
 			}
 
 
 			for (Integer integer : numsSet) {
-				System.out.print(integer+" ");
-				if(integer==Integer.parseInt(vipId)){
-					win=true;
+				System.out.print(integer + " ");
+				if (integer == Integer.parseInt(vipId)) {
+					win = true;
 				}
 			}
 			System.out.println();
 
-			if(win){
+			if (win) {
 				System.out.println("恭喜你为本日的幸运用户");
-			}else {
+			} else {
 				System.out.println("抱歉！ 您不是本日的幸运用户");
 			}
 
