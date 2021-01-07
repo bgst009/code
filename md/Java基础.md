@@ -123,3 +123,11 @@
   - 表达式优先级
 
 ![图片描述](https://gitee.com/bgst009/markdownPicUrl/raw/master/20210106100639.png)
+
+
+
+## String
+
+![image-20210107094324013](https://gitee.com/bgst009/markdownPicUrl/raw/master/20210107094324.png)
+
+![image-20210107104613904](https://gitee.com/bgst009/markdownPicUrl/raw/master/20210107104614.png)
