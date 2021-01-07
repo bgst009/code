@@ -1,5 +1,4 @@
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * @author Nil
@@ -8,7 +7,7 @@ public class Lottery {
 	static Lottery lottery = new Lottery();
 	String password, username, vipId;
 	boolean loginFlag = false;
-	int chance=3;
+	int chance = 3;
 
 	public static void main(String[] args) {
 		String[] menu = {"*****欢迎进入奖客富翁系统*****", "注册", "登录", "抽奖"};
@@ -41,7 +40,7 @@ public class Lottery {
 				default:
 					break;
 			}
-			if(chance==0){
+			if (chance == 0) {
 				System.out.println("退出");
 				return;
 			}
@@ -78,37 +77,45 @@ public class Lottery {
 			loginFlag = false;
 			System.out.println("用户名或密码不正确");
 			chance--;
-			System.out.println("还有 "+chance+" 次机会");
+			System.out.println("还有 " + chance + " 次机会");
 		}
 
 	}
 
 	public void beginLottery() {
 		int[] randomArray = new int[5];
-
-
+		boolean win = false;
 		if (loginFlag) {
+			System.out.println("会员码为："+vipId);
+
 			System.out.print("本日幸运数字为：");
-			for (int i = 0; i < randomArray.length; i++) {
-				randomArray[i] = new Random().nextInt(10);
-				System.out.print(randomArray[i] + " ");
+
+			Set<Integer> numsSet = new HashSet<>();
+			int num = 5;
+			int range = 10;
+
+			while (numsSet.size() < num) {
+				int tmp = new Random().nextInt(range)+1;
+				numsSet.add(tmp);
+			}
+
+
+			for (Integer integer : numsSet) {
+				System.out.print(integer+" ");
+				if(integer==Integer.parseInt(vipId)){
+					win=true;
+				}
 			}
 			System.out.println();
 
-			for (int i = 0; i < randomArray.length; i++) {
-				if (Integer.parseInt(vipId) == randomArray[i]) {
-					System.out.println("恭喜你为本日的幸运用户");
-					break;
-				}
-				if (i == randomArray.length - 1) {
-					System.out.println("抱歉！ 您不是本日的幸运用户");
-					break;
-				}
+			if(win){
+				System.out.println("恭喜你为本日的幸运用户");
+			}else {
+				System.out.println("抱歉！ 您不是本日的幸运用户");
 			}
 
 		} else {
 			System.out.println("请先登录");
-			return;
 		}
 	}
 }
