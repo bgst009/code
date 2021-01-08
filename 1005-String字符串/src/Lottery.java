@@ -17,7 +17,6 @@ public class Lottery {
 
 	public static void main(String[] args) {
 		String[] menu = {"*****欢迎进入奖客富翁系统*****", "注册", "登录", "抽奖"};
-
 		lottery.info(menu);
 	}
 
@@ -67,7 +66,7 @@ public class Lottery {
 		usrInfoDate[baseId][1] = password;
 		usrInfoDate[baseId][2] = vipId;
 		System.out.println("用户名  密码  会员卡号");
-		System.out.println(usrInfoDate[baseId][0] + "    " + usrInfoDate[baseId][1] + "     " + usrInfoDate[baseId][2]);
+		System.out.println(usrInfoDate[baseId][0] + "       " + usrInfoDate[baseId][1] + "         " + usrInfoDate[baseId][2]);
 		baseId++;
 	}
 
@@ -93,6 +92,7 @@ public class Lottery {
 		if (logged) {
 			System.out.println("登录成功");
 			loginFlag = true;
+			chance=3;
 		} else {
 			loginFlag = false;
 			System.out.println("用户名或密码不正确");

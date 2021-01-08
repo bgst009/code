@@ -131,3 +131,8 @@
 ![image-20210107094324013](https://gitee.com/bgst009/markdownPicUrl/raw/master/20210107094324.png)
 
 ![image-20210107104613904](https://gitee.com/bgst009/markdownPicUrl/raw/master/20210107104614.png)
+
+## 数组
+
+- 开关
+  - for 中 有 if…else -> for 中用 Boolean
