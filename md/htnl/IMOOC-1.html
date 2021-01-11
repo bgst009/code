@@ -1,0 +1,909 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>IMOOC-1</title><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none 0s ease 0s; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-require-zoom-fix foreignobject { font-size: var(--mermaid-font-zoom); }
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+    --monospace: "Jetbrains Mono", "思源黑体 CN";
+}
+
+.title-text {
+    font-size: 14px;
+}
+
+body, .title-text {
+    background-color: white;
+    font-family: "Inter", "思源黑体 CN";
+    color: rgb(12, 12, 12);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 30px;
+    padding-bottom: 100px;
+}
+
+#write>ul:first-child, #write>ol:first-child {
+    margin-top: 30px;
+}
+
+a.md-inner-link {
+    color: #3b78e7;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    line-height: 1.4;
+    cursor: text;
+    font-feature-settings: "tnum";
+}
+
+.md-toc {
+    font-weight: 500;
+    line-height: 1.2;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    font-feature-settings: "tnum";
+}
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+    text-decoration: none;
+}
+
+h1 tt, h1 code {
+    font-size: inherit;
+}
+
+h2 tt, h2 code {
+    font-size: inherit;
+}
+
+h3 tt, h3 code {
+    font-size: inherit;
+}
+
+h4 tt, h4 code {
+    font-size: inherit;
+}
+
+h5 tt, h5 code {
+    font-size: inherit;
+}
+
+h6 tt, h6 code {
+    font-size: inherit;
+}
+
+h1 {
+    font-family: "Inter", "思源黑体 CN";
+    padding-bottom: .1em;
+    font-size: 2.25em;
+    line-height: 1.5;
+}
+
+h1 strong {
+    font-weight: 800;
+}
+
+li.active {
+    background-color: #000;
+    color: #fff;
+}
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+
+h4 {
+    font-size: 1.25em;
+}
+
+h5 {
+    font-size: 1em;
+    line-height: 2;
+}
+
+h5 strong {
+    background-color: #3b78e7;
+    color: white;
+    font-weight: 800;
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    text-align: center;
+    line-height: 24px;
+    padding: 0;
+    font-family: Inter;
+    font-feature-settings: "tnum" 0;
+    border-radius: 3px;
+}
+
+h6 {
+    font-size: 1em;
+}
+
+p, blockquote, ul, ol, dl, table {
+    margin: 0.8em 0;
+}
+
+li>ol, li>ul {
+    margin: 0 0;
+}
+
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+
+ul, ol {
+    padding-left: 30px;
+}
+
+ul:first-child, ol:first-child {
+    margin-top: 0;
+}
+
+ul:last-child, ol:last-child {
+    margin-bottom: 0;
+}
+
+a>span>code {
+    color: #3b78e7!important;
+    text-decoration: none!important;
+}
+
+blockquote {
+    border-radius: 4px;
+    padding: 12px 16px;
+    background-color: #f4f7f8;
+    font-family: '思源宋体 CN', serif;
+    color: #252d34;
+}
+
+blockquote code {
+    background-color: transparent;
+}
+
+h2:hover:before, h1:hover:before, h3:hover:before {
+    content: "#";
+    width: 0px;
+    position: absolute;
+    left: -24px;
+    opacity: 0.1;
+}
+
+blockquote blockquote {
+    padding-right: 0;
+}
+
+table {
+    padding: 0;
+    word-break: initial;
+}
+
+table tr {
+    border-top: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+
+table tr:nth-child(2n), thead {
+    background-color: #f8f8f8;
+}
+
+table tr th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+
+table tr td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+
+table tr th:first-child, table tr td:first-child {
+    margin-top: 0;
+}
+
+table tr th:last-child, table tr td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    line-height: 1.5rem!important;
+    padding-left: 6px;
+}
+
+.code-tooltip {
+    border-radius: 4px;
+    background-color: white;
+    box-shadow: 0 25.6px 57.6px 0 rgba(0, 0, 0, .22), 0 4.8px 14.4px 0 rgba(0, 0, 0, .18)!important;
+}
+
+code, tt {
+    border-radius: 4px;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+    font-family: 'Jetbrains Mono', '思源黑体 CN';
+}
+
+code {
+    color: #37474f;
+    font-weight: 600;
+    background-color: #f4f7f8;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+
+mark {
+    border-radius: 4px;
+    color: #141001;
+    font-weight: inherit;
+    background-color: #ffde67;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+del {
+    border-radius: 4px;
+    color: #d4d4d4;
+    font-weight: inherit;
+    background-color: #d4d4d430;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin-left: 2px;
+    margin-right: 2px;
+    text-decoration-color: #d4d4d4;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+    line-height: 1.25rem;
+}
+
+.md-task-list-item>input {
+    margin-left: -1.3em;
+}
+.md-br-content .md-raw-inline{
+    opacity: 0.5;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+        background-color: white;
+        line-height: 3!important;
+    }
+    body {
+        margin-top: 24px!important;
+        margin-bottom: 24px!important;
+    }
+    table, pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+    ol {
+        border: 1px solid rgb(238, 238, 238);
+        border-radius: 4px;
+        padding-top: 12px;
+        padding-bottom: 8px;
+        padding-right: 4px;
+    }
+    a>span>code, a>code, a code {
+        background-color: #3b78e718!important;
+    }
+    a {
+        color: #3b78e7!important;
+        text-decoration: none!important;
+    }
+    .md-plain {
+        line-height: 3!important;
+    }
+    .page-break {
+        page-break-after: always;
+        break-after: page;
+    }
+    .page-break:before {
+        content: none
+    }
+    code {
+        font-variant-ligatures: common-ligatures!important;
+    }
+}
+
+.page-break:before {
+    background-color: #05685b;
+}
+
+.page-break:before {
+    content: "Page Break"
+}
+
+.md-toc-inner {
+    margin: 2px;
+}
+
+.md-toc-h1 {
+    margin-top: 16px;
+}
+
+.md-toc-h2 {
+    margin-top: 8px;
+}
+
+/* h1 strong, h2 strong, h3 strong, h4 strong, h6 strong, .md-toc strong{
+    font-weight: 800;
+    border-radius: 4px;
+    background-color: #f1f3f4;
+} */
+
+.md-p a, a.md-toc-inner {
+    color: #3b78e7!important;
+    text-decoration: none!important;
+    border-bottom: 2px solid #3b78e700;
+    transition: all 0.16s;
+}
+
+.md-p a:hover, a.md-toc-inner:hover {
+    color: #3b78e7!important;
+    text-decoration: none!important;
+    border-bottom: 2px solid #3b78e7;
+    transition: all 0.16s;
+}
+
+.md-content.md-url {
+    color: #05685b!important;
+    text-decoration: none!important;
+    font-family: 'Jetbrains Mono';
+}
+
+a>span>code, a>code, a code {
+    color: #3b78e7!important;
+    text-decoration: none!important;
+    background-color: #3b78e718!important;
+}
+
+.md-link {
+    text-decoration: none!important;
+    border-bottom: 2px solid #3b78e700;
+    transition: all .2s;
+}
+
+.md-link:hover {
+    border-bottom: 2px solid #3b78e7ff;
+    transition: all .2s;
+}
+
+.md-fences {
+    background-color: #f4f7f8;
+    border-radius: 4px;
+    padding: 12px;
+    font-size: 0.9em;
+    font-family: 'Jetbrains Mono', '思源黑体 CN';
+}
+
+#write pre.md-meta-block {
+    padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+    bottom: .2rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before {
+    left: -1.5625rem;
+    top: .375rem;
+}
+
+#write>h4.md-focus:before {
+    left: -1.5625rem;
+    top: .285714286rem;
+}
+
+#write>h5.md-focus:before {
+    left: -1.5625rem;
+    top: .285714286rem;
+}
+
+#write>h6.md-focus:before {
+    left: -1.5625rem;
+    top: .285714286rem;
+}
+
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc {
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer {
+    font-family: "Inter", "思源黑体 CN";
+}
+
+.file-node-content:hover .file-node-icon, .file-node-content:hover .file-node-open-state {
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+.html-for-mac .context-menu {
+    --item-hover-bg-color: #E6F0FE;
+}
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #00000010;
+}
+
+.CodeMirror-linenumber {
+    color: rgba(20, 20, 20, 0.3);
+}
+
+.CodeMirror-gutters {
+    border-right: none;
+    /* border-right: 1.08px solid rgba(20, 20, 20, 0.3); */
+}
+
+.context-menu {
+    border: none!important;
+    backdrop-filter: saturate(180%) blur(20px) brightness(1.1);
+    background-color: #ffffffd0;
+    box-shadow: 0 25.6px 57.6px 0 rgba(0, 0, 0, .22), 0 4.8px 14.4px 0 rgba(0, 0, 0, .18)!important;
+}
+
+.divider {
+    background-color: #00000020!important;
+    border: none!important;
+}
+
+.ty-footer, .sidebar-footer {
+    backdrop-filter: saturate(180%) blur(20px) brightness(1.1);
+    border: none!important;
+    background: none;
+    background-color: #ffffff70;
+    box-shadow: 0 25.6px 57.6px 0 rgba(0, 0, 0, .22), 0 4.8px 14.4px 0 rgba(0, 0, 0, .18);
+}
+
+#sidebar-files-menu {
+    border-radius: 4px;
+    border: none!important;
+    background-color: #ffffff;
+    box-shadow: 0 25.6px 57.6px 0 rgba(0, 0, 0, .22), 0 4.8px 14.4px 0 rgba(0, 0, 0, .18);
+}
+
+@media (min-width: 1000px) {
+    footer.ty-footer {
+        background-color: #ffffff70;
+        border: none!important;
+        right: 0!important;
+        backdrop-filter: saturate(180%) blur(20px) brightness(1.1);
+    }
+}
+
+@media (max-width: 1000px) {
+    footer.ty-footer {
+        background-color: #ffffff70;
+        border: none!important;
+        backdrop-filter: saturate(180%) blur(20px) brightness(1.1);
+        box-shadow: 0 25.6px 57.6px 0 rgba(0, 0, 0, .22), 0 4.8px 14.4px 0 rgba(0, 0, 0, .18);
+    }
+}
+
+.code-tooltip.md-tooltip-hide.md-hover-tip {
+    box-shadow: 0 25.6px 57.6px 0 rgba(0, 0, 0, .22), 0 4.8px 14.4px 0 rgba(0, 0, 0, .18);
+}
+
+.md-rawblock-control.md-rawblock-after {
+    margin-bottom: 12px;
+}
+
+#typora-sidebar {
+    background-color: #fafafa!important;
+    border: none!important;
+    box-shadow: 0 6.4px 14.4px 0 rgba(0, 0, 0, .132), 0 1.2px 3.6px 0 rgba(0, 0, 0, .108)!important;
+}
+
+.file-node-title {
+    color: #0f0f0f;
+}
+
+#footer-word-count-info, #spell-check-panel {
+    border: none!important;
+    background-color: #ffffff!important;
+    box-shadow: 0 25.6px 57.6px 0 rgba(0, 0, 0, .22), 0 4.8px 14.4px 0 rgba(0, 0, 0, .18)!important;
+}
+
+content {
+    bottom: 4px;
+}
+
+blockquote>h4, blockquote>h5, blockquote>h6 {
+    font-size: 1em;
+    columns: inherit;
+}
+
+blockquote>h4::before {
+    width: 24px;
+    content: "\f097";
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome2;
+    font-size: 1em;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+blockquote>h5::before {
+    width: 32px;
+    content: "e.g.";
+    display: inline-block;
+    font-style: italic;
+    font-size: 1.2em;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    opacity: 0.5;
+}
+
+blockquote>h6::before {
+    width: 24px;
+    content: "\f27b";
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome2;
+    font-size: 1em;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    columns: inherit;
+}
+
+.ol-list {
+    border: 1px solid rgb(238, 238, 238);
+    border-radius: 4px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-right: 12px;
+}
+
+.MetaInfo-Author {
+    opacity: 0.6;
+    margin-top: -6px
+}
+
+.MetaInfo-Deadline {
+    display: none;
+    opacity: 0
+}
+
+.cm-keyword, .cm-variable-3, .cm-tag {
+    color: #3b78e7!important
+}
+
+.cm-def, .cm-attribute {
+    color: #9c27b0!important
+}
+
+.cm-comment {
+    color: #d81b60!important;
+    font-style: oblique!important;
+    font-variant-ligatures: common-ligatures!important;
+    font-variation-settings: 'slnt' -9;
+}
+
+.cm-string {
+    color: #0d904f!important;
+    font-style: italic!important;
+    font-variant-ligatures: common-ligatures!important;
+}
+
+.cm-tag:not(.cm-bracket) {
+    font-weight: 700;
+}
+
+.cm-operator {
+    color: #d81b60!important;
+}
+
+.cm-number {
+    color: #d81b60!important;
+}
+
+.cm-meta {
+    color: #9c27b0!important;
+    font-weight: 700!important;
+}
+
+.cm-builtin {
+    font-style: italic!important;
+}
+
+.file-tree-node.active>.file-node-background {
+    background-color: var(--active-file-bg-color);
+    border-left: 4px solid #3b78e7!important;
+    border-color: #3b78e7!important;
+    background-color: #3b78e718!important;
+}
+
+
+</style>
+</head>
+<body class='typora-export os-windows'>
+<div id='write'  class=' first-line-indent'><h1><a name="第1周-环境搭建与语法入门" class="md-header-anchor"></a><span>第1周 环境搭建与语法入门</span></h1><h2><a name="主要内容" class="md-header-anchor"></a><span>主要内容</span></h2><ul><li><span>Java简介</span></li><li><span>开发环境搭建</span></li><li><span>开发第一个Java程序</span></li><li><span>使用Eclipse进行Java开发</span></li></ul><h3><a name="java简介" class="md-header-anchor"></a><span>Java简介</span></h3><ul><li><span>Java是一门面向对象的程序设计语言</span></li><li><span>1995年由sun公司发布</span></li><li><span>2010年被Oracle公司收购</span></li><li><span>现在的JDK版本是 8.0</span></li></ul><h4><a name="jvm" class="md-header-anchor"></a><span>JVM</span></h4><ul><li><span>JVM(Java Virtual Machine)，Java虚拟机</span></li><li><span>JVM是Java平台无关性实现的关键</span></li></ul><h4><a name="java程序执行过程" class="md-header-anchor"></a><span>Java程序执行过程</span></h4><p><img src="https://gitee.com/bgst009/markdownPicUrl/raw/master/20210106162845.png" referrerpolicy="no-referrer" alt="image-20210106162845237"></p><h4><a name="jdk" class="md-header-anchor"></a><span>JDK</span></h4><ul><li><p><span>JDK（Java Development Kit），Java语言的软件开发工具包。</span></p></li><li><p><span>两个主要组件：</span></p><ul><li><span>javac –编译器，将源程序转成字节码</span></li><li><span>-java –运行编译后的java程序（.class后缀的）</span></li></ul></li></ul><p>&nbsp;</p><h4><a name="jre" class="md-header-anchor"></a><span>JRE</span></h4><ul><li><span>JRE(Java Runtime Environment)</span></li><li><span>包括Java虚拟机（JVM）、Java核心类库和支持文件</span></li><li><span>如果只需要运行Java程序，下载并安装JRE即可</span></li><li><span>如果要开发Java软件，需要下载JDK</span></li><li><span>在JDK中附带有JRE</span></li></ul><h4><a name="jdkjre和jvm三者的关系" class="md-header-anchor"></a><span>JDK、JRE和JVM三者的关系</span></h4><p><img src="https://gitee.com/bgst009/markdownPicUrl/raw/master/20210106163045.png" referrerpolicy="no-referrer" alt="image-20210106163045060"></p><h4><a name="java平台" class="md-header-anchor"></a><span>Java平台</span></h4><p><img src="https://gitee.com/bgst009/markdownPicUrl/raw/master/20210106163118.png" referrerpolicy="no-referrer" alt="image-20210106163118193"></p><p>&nbsp;</p><h4><a name="java程序的结构" class="md-header-anchor"></a><span>Java程序的结构</span></h4><p><img src="https://gitee.com/bgst009/markdownPicUrl/raw/master/20210106163144.png" referrerpolicy="no-referrer" alt="image-20210106163144559"></p><h3><a name="jdk环境搭建" class="md-header-anchor"></a><span>JDK环境搭建</span></h3><h4><a name="jdk的下载和安装" class="md-header-anchor"></a><span>JDK的下载和安装</span></h4><h4><a name="java程序的执行流程" class="md-header-anchor"></a><span>Java程序的执行流程</span></h4><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><h1><a name="变量与常量" class="md-header-anchor"></a><span>变量与常量</span></h1><h2><a name="主要内容-n68" class="md-header-anchor"></a><span>主要内容</span></h2><ul><li><span>标识符</span></li><li><span>关键字</span></li><li><span>变量</span></li><li><span>数据类型</span></li><li><span>类型转换</span></li><li><span>常量</span></li></ul><p>&nbsp;</p><h2><a name="标识符" class="md-header-anchor"></a><span>标识符</span></h2><h3><a name="标识符的命名规则" class="md-header-anchor"></a><span>标识符的命名规则</span></h3><ul><li><span>标识符可以由字母、数字、下划线（_）和美元符($）组成，不</span>
+<span>能以数字开头</span></li><li><span>标识符严格区分大小写</span></li><li><span>标识符不能是Java关键字和保留字</span></li><li><span>标识符的命名最好能反映出其作用</span></li></ul><p>&nbsp;</p><h2><a name="关键字" class="md-header-anchor"></a><span>关键字</span></h2><p><img src="https://gitee.com/bgst009/markdownPicUrl/raw/master/20210106163815.png" referrerpolicy="no-referrer" alt="image-20210106163815565"></p><p>&nbsp;</p><h2><a name="变量" class="md-header-anchor"></a><span>变量</span></h2><blockquote><p><span>变量的三个元素：变量类型、变量名和变量值。</span></p></blockquote><h3><a name="变量名的命名规则" class="md-header-anchor"></a><span>变量名的命名规则</span></h3><ul><li><span>满足标识符命名规则</span></li><li><span>符合驼峰法命名规范</span></li><li><span>尽量简单，做到见名知意</span></li><li><span>变量名的长度没有限制</span></li></ul><h3><a name="类的命名规则" class="md-header-anchor"></a><span>类的命名规则</span></h3><ul><li><span>满足Pascal命名法规范(与骆驼命名法类似只不过骆驼命名法是首字母小写，而帕斯卡命名法是首字母大写)</span></li></ul><p>&nbsp;</p><h2><a name="数据类型" class="md-header-anchor"></a><span>数据类型</span></h2><p><img src="https://gitee.com/bgst009/markdownPicUrl/raw/master/20210106164056.png" referrerpolicy="no-referrer" alt="image-20210106164056436"></p><p><img src="https://gitee.com/bgst009/markdownPicUrl/raw/master/20210106171539.png" referrerpolicy="no-referrer" alt="image-20210106171539327"></p><h3><a name="基本数据类型" class="md-header-anchor"></a><span>基本数据类型</span></h3><figure><table><thead><tr><th><span>数据类型</span></th><th>&nbsp;</th><th><span>字 节</span></th></tr></thead><tbody><tr><td><span>byte</span></td><td>&nbsp;</td><td><span>1</span></td></tr><tr><td><span>short</span></td><td>&nbsp;</td><td><span>2</span></td></tr><tr><td><span>int</span></td><td>&nbsp;</td><td><span>4</span></td></tr><tr><td><span>long</span></td><td>&nbsp;</td><td><span>8</span></td></tr><tr><td><span>float</span></td><td>&nbsp;</td><td><span>4</span></td></tr><tr><td><span>double</span></td><td>&nbsp;</td><td><span>8</span></td></tr><tr><td><span>char</span></td><td>&nbsp;</td><td><span>2</span></td></tr><tr><td><span>boolean</span></td><td>&nbsp;</td><td><span>1</span></td></tr></tbody></table></figure><h3><a name="进制表示" class="md-header-anchor"></a><span>进制表示</span></h3><ul><li><span>八进制：以0开头，包括0-7的数字</span>
+<span>如：037，056</span></li><li><span>十六进制表示：以0x或0X开头，包括0-9的数字，及字母a-f，A-F</span>
+<span>如：0x12，0xabcf，0XABCFF</span></li></ul><p>&nbsp;</p><h3><a name="整型字面值" class="md-header-anchor"></a><span>整型字面值</span></h3><p><span>Java中有三种表示整数的方法：十进制、八进制、十六进制</span></p><p><span>如：123，023，0x1357，0X3c，0x1abcL</span></p><p>&nbsp;</p><h3><a name="变量声明" class="md-header-anchor"></a><span>变量声明</span></h3><ul><li><span>格式：数据类型 变量名；</span>
+<span>例：</span>
+<span>int n; 声明整型变量n</span>
+<span>long count； 声明长整型变量count</span></li></ul><p>&nbsp;</p><h3><a name="赋值" class="md-header-anchor"></a><span>赋值</span></h3><ul><li><p><span>使用“＝”运算符进行赋值</span></p></li><li><p><span>“＝”叫作赋值运算符，将运算符右边的值赋给左边的变量</span></p><ul><li><span>例：int n; 定义int型变量n</span></li><li><span>n=3; 将3赋值给n</span></li></ul></li><li><p><span>可以在定义变量的同时给变量赋值，即变量的初始化。</span></p><ul><li><span>例：int n=3;</span></li><li><span>数据类型 变量名＝变量值;</span></li></ul></li></ul><p>&nbsp;</p><h3><a name="变量定义" class="md-header-anchor"></a><span>变量定义</span></h3><ul><li><span>int octal=037; //定义int类型变量存放八进制数据</span></li><li><span>long longNumber=0xa2cdf3ffL;  //定义变量存放十六进制长整型数据</span></li><li><span>short shortNumber=123;  //定义变量存放短整型数据</span></li><li><span>byte b=10; //定义变量存放byte类型数据</span></li></ul><blockquote><p><span>说明：</span></p><p><span>整型字面值默认情况下是int类型，如果表示长整型则在末尾加l或L</span></p></blockquote><h3><a name="语句" class="md-header-anchor"></a><span>语句</span></h3><ul><li><span>以分号结束</span></li><li><span>不能换到一行写</span></li></ul><h3><a name="浮点型字面值" class="md-header-anchor"></a><span>浮点型字面值</span></h3><ul><li><span>浮点型字面值默认情况下表示double类型，也可以在值后加d或D</span>
+<span>如：</span><code>123.43d</code><span>或</span><code>123.43D</code>
+<span>如表示float类型，则需要在字面值后加f或F</span>
+<span>如：</span><code>23.4f</code><span>或</span><code>23.4F</code></li></ul><p>&nbsp;</p><h3><a name="基本数据类型变量的存储" class="md-header-anchor"></a><span>基本数据类型变量的存储</span></h3><ul><li><p><span>类型</span></p><ul><li><img src="https://gitee.com/bgst009/markdownPicUrl/raw/master/20210106165205.png" referrerpolicy="no-referrer" alt="image-20210106165204993"></li></ul></li><li><p><span>范围</span></p><ul><li><img src="https://gitee.com/bgst009/markdownPicUrl/raw/master/20210106165240.png" referrerpolicy="no-referrer" alt="image-20210106165239992"></li></ul></li><li><p><img src="https://gitee.com/bgst009/markdownPicUrl/raw/master/20210106165337.png" referrerpolicy="no-referrer" alt="image-20210106165337678"></p></li><li><p><span>局部变量的存储</span></p><ul><li><img src="https://gitee.com/bgst009/markdownPicUrl/raw/master/20210106165441.png" referrerpolicy="no-referrer" alt="image-20210106165441811"></li></ul></li></ul><h3><a name="字符型字面值" class="md-header-anchor"></a><span>字符型字面值</span></h3><ul><li><span>字符型字面值用单引号内的单个字符表示</span>
+<span>如：‘a’，‘b’，‘$’</span></li><li><span>如何定义字符型变量？</span>
+<span>char a=‘a’；</span>
+<span>char ch=65;</span></li></ul><h3><a name="ascii码" class="md-header-anchor"></a><span>ASCII码</span></h3><ul><li><span>ASCII（American Standard Code for Information Interchange，美国标准信息交换代码）</span></li><li><span>基于拉丁字母的一套电脑编码系统</span></li><li><span>主要用于显示现代英语和其他西欧语言</span></li></ul><h4><a name="ascii码表示" class="md-header-anchor"></a><span>ASCII码表示</span></h4><ul><li><span>使用7位或8位二进制数组合来表示128（标准）或256（拓展）种可能的字符。</span></li><li><span>标准ASCII码使用7位二进制来表示所有的大写字母和小写字母，数字0-9，标点符号，以及在美式英语种使用的控制字符。</span></li><li><span>后128个称为扩展ASCII码，用于表示特殊符号、外来语字母和图形符号。</span></li></ul><p>&nbsp;</p><h3><a name="unicode编码" class="md-header-anchor"></a><span>Unicode编码</span></h3><ul><li><span>char c=‘\u005d’;  （四位）</span></li><li><span>Unicode表示法，在值前加前缀\u</span></li></ul><p>&nbsp;</p><h3><a name="布尔类型字面值" class="md-header-anchor"></a><span>布尔类型字面值</span></h3><ul><li><span>布尔值只能定义为true和false</span>
+<span>例：boolean b=true;</span></li></ul><p>&nbsp;</p><h3><a name="字符串字面值" class="md-header-anchor"></a><span>字符串字面值</span></h3><ul><li><span>双引号引起来的0个或多个字符。</span></li><li><span>类</span></li></ul><p>&nbsp;</p><h3><a name="转义字符" class="md-header-anchor"></a><span>转义字符</span></h3><p><img src="https://gitee.com/bgst009/markdownPicUrl/raw/master/20210106170812.png" referrerpolicy="no-referrer" alt="image-20210106170812629"></p><h3><a name="类型转换" class="md-header-anchor"></a><span>类型转换</span></h3><ul><li><span>类型转换分为自动类型转换和强制类型转换</span></li></ul><h4><a name="自动类型转换顺序" class="md-header-anchor"></a><span>自动类型转换顺序</span></h4><ul><li><img src="https://gitee.com/bgst009/markdownPicUrl/raw/master/20210106170713.png" referrerpolicy="no-referrer" alt="image-20210106170712881"></li></ul><h4><a name="强制类型转换" class="md-header-anchor"></a><span>强制类型转换</span></h4><ul><li><span>如果A类型的数据表示范围比B类型大，则将A类型的值赋值给B类型，需要强制类型转换</span>
+<span>如：double d＝123.4;</span>
+<span> float f=(float)d;</span></li></ul><p>&nbsp;</p><h2><a name="常量" class="md-header-anchor"></a><span>常量</span></h2><ul><li><code>final int n＝5；</code></li></ul><h1><a name="第3周-面向对象之封装与继承" class="md-header-anchor"></a><span>第3周 面向对象之封装与继承</span></h1><h2><a name="第1节-java面向对象" class="md-header-anchor"></a><span>第1节 Java面向对象</span></h2><h3><a name="什么是对象" class="md-header-anchor"></a><span>什么是对象</span></h3><ul><li><span>万物皆对象、客观存在的事物</span></li><li><span>对象：用来描述客观事物的一个实体，由一组属性和方法构成</span></li></ul><h3><a name="什么是面向对象" class="md-header-anchor"></a><span>什么是面向对象</span></h3><ul><li><span>人关注对象</span></li><li><span>人关注事物信息</span></li></ul><h3><a name="什么是类" class="md-header-anchor"></a><span>什么是类</span></h3><ul><li><p><span>类是模子，确定对象将会拥有的特征（属性）和行为（方法）</span></p></li><li><p><span>类的特点</span></p><ul><li><span>类是对象的类型</span></li><li><span>具有相同属性和方法的一组对象的集合</span></li></ul></li></ul><h3><a name="什么是对象的属性和方法" class="md-header-anchor"></a><span>什么是对象的属性和方法</span></h3><ul><li><span>属性：对象具有的各种静态特征-&gt;“有什么”</span></li><li><span>方法：对象具有的各种动态行为-&gt;“能做什么”</span></li></ul><h3><a name="类和对象的关系" class="md-header-anchor"></a><span>类和对象的关系</span></h3><ul><li><span>类是抽象的概念，仅仅是模板</span></li><li><span>对象是一个你能够看得到、摸得着的具体实体</span></li><li><span>类是对象的类型</span></li><li><span>对象是特定类型的数据</span></li><li><span>具体开发过程中，先定义类再实例化对象</span></li></ul><p>&nbsp;</p><h3><a name="单一职责原则" class="md-header-anchor"></a><span>单一职责原则</span></h3><ul><li><span>单一职责原则，也称为单一功能原则</span></li><li><span>英文Single Responsibility Principle 缩写SRP </span></li><li><span>是面向对象设计中的一个重要原则</span></li><li><span>一个类，应该有且只有一个引起变化的原因</span></li><li><span>在程序设计中，尽量把不同的职责，放在不同的职责中，即把不同的变化原因，封装到不同的类中。</span></li></ul><blockquote><p><span>单一职责原则（SRP：Single responsibility principle）又称单一功能原则，面向对象五个基本原则（SOLID： SRP 单一责任原则、OCP 开放封闭原则、LSP 里氏替换原则、DIP 依赖倒置原则、ISP 接口分离原则）之一。它规定一个类应该只有一个发生变化的原因。</span></p></blockquote><h3><a name="对象实例化" class="md-header-anchor"></a><span>对象实例化</span></h3><ul><li><p><span>实例化对象的过程可以分为两部分：</span></p><ol><li><span>声明对象 Cat one</span></li><li><span>实例化对象 new Cat();</span></li></ol></li><li><p><span>声明与实例化的存储</span></p><ul><li><img src="https://gitee.com/bgst009/markdownPicUrl/raw/master/20210108203054.png" referrerpolicy="no-referrer" alt="声明与实例化的存储"></li></ul></li><li><p><span>多个对象可以指向同一块实例化空间有或者是每次new对象会产生新的实例化对象</span></p><ul><li><p><span>实例化新的对象</span></p><ul><li><img src="https://gitee.com/bgst009/markdownPicUrl/raw/master/20210108203248.png" referrerpolicy="no-referrer" alt="实例化新的对象"></li></ul></li><li><p><span>同一个实例空间</span></p><ul><li><img src="https://gitee.com/bgst009/markdownPicUrl/raw/master/20210108203304.png" referrerpolicy="no-referrer" alt="同一个实例空间"></li></ul></li></ul></li></ul><p>&nbsp;</p><blockquote><p><strong><span>备忘</span></strong><span>：</span></p><ol><li><span>对象必须被实例化之后才能使用</span></li><li><span>对象间的引用传递，实际上传递的是堆内存空间的使用权</span></li></ol></blockquote><h3><a name="构造方法" class="md-header-anchor"></a><span>构造方法</span></h3><ol><li><span>构造方法与类同名且没有返回值</span></li><li><span>构造方法的语句格式</span></li><li><span>只能在对象实例化的时候调用</span></li><li><span>当没有指定构造方法时，系统会自动添加无参的构造方法</span></li><li><span>当有指定构造方法，无论是有参、无参的构造方法，都不会自动添加无参的构造方法</span></li><li><span>一个类中可以有多个构造方法</span></li></ol><p><img src="https://gitee.com/bgst009/markdownPicUrl/raw/master/20210108203524.png" referrerpolicy="no-referrer" alt="构造方法规则"></p><h3><a name="this关键字" class="md-header-anchor"></a><span>this关键字</span></h3><ul><li><p><span>this：当前对象的默认引用</span></p></li><li><p><span>this的使用</span></p><ul><li><p><span>调用成员变量，解决成员属性和局部变量同名冲突</span><span>	</span></p><ul><li><img src="https://gitee.com/bgst009/markdownPicUrl/raw/master/20210108203747.png" referrerpolicy="no-referrer" alt="冲突"></li></ul></li><li><p><span>调用成员方法</span></p><ul><li><img src="https://gitee.com/bgst009/markdownPicUrl/raw/master/20210108203845.png" referrerpolicy="no-referrer" alt="调用成员方法"></li></ul></li><li><p><span>调用重载的构造方法</span></p><ul><li><img src="https://gitee.com/bgst009/markdownPicUrl/raw/master/20210108203946.png" referrerpolicy="no-referrer" alt="调用重载的构造方法"></li></ul></li></ul></li></ul></div>
+</body>
+</html>
