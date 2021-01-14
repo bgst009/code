@@ -122,7 +122,8 @@ public class Referee {
 	}
 
 	public void letsGame() {
-		Gamer player1 = new PersonGamer(0);
+//		Gamer player1 = new PersonGamer(0);
+		Gamer player1 = new RobotGamer(0);
 		Gamer player2 = new RobotGamer(0);
 		Referee referee = new Referee(player1, player2);
 		referee.sayRules();
